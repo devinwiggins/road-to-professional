@@ -7,7 +7,9 @@ int main() {
 	char answer;
 
 	do {
-		std::cout << "welcome to the Coin-Flip mini game simulator. choose a number 1 or 2 to begin \nthe game. calling a number will begin the game. Depending on which number you\nchose, your choice will either result in a victory or a loss. GLHF" << std::endl;
+		std::cout << "welcome to the Coin-Flip mini game simulator."
+			<< "choose a number 1 or 2 to begin \nthe game. calling a number will begin the game."
+			<< "Depending on which number you\nchose, your choice will either result in a victory or a loss. GLHF" << std::endl;
 		std::cout << "Heads = 1\nTails = 2" << std::endl;
 		std::cout << "type 1 or 2 \n";
 		int x;
