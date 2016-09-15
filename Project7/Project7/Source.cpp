@@ -44,18 +44,13 @@ void instructions_G()
 			}
 		}
 	}
-void main()
-{
-	bool cont = true;
-	int answer;
-	do 
+	int main()
 	{
-		instructions_G();
-		play();
-		std::cout << "Would you like to continue? Y/N" << std::endl;
-		if (answer == 'n' || 'N')
-				break;
-	} while (answer != 'n');
-	
-	system("pause");
-}
+		bool cont = true;
+		while (cont)
+		{
+			instructions_G();
+			play();
+		}
+		system("pause");
+	}

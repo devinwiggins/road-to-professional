@@ -10,9 +10,15 @@ enum action
 void instructions_g()
 {
 	std::cout << "Welcome to the Tic Tac Toe Simulator." << std::endl;
+	std::cout << "1 | 2 | 3\n"
+		<< "___________\n"
+		<< "4 | 5 | 6\n"
+		<< "___________\n"
+		<< "O | X | O\n";
 }
 void play()
 {
+	int space;
 	char a[3][3] = {
 		{ '1', '2', '3' }, // 1st row
 		{ '4', '5', '6' }, // 2nd row
@@ -23,7 +29,9 @@ void play()
 							X | O | X
 							___________
 							O | X | O  */
-	std::cout << "make a call for space 1" << std::endl; //supposed to allow player to choose a space needs to be updated
+	std::cout << "would space would you like to place your call\n";
+	std::cin >> space;
+	std::cout << "make a call for space " << space <<  std::endl; //supposed to allow player to choose a space needs to be updated
 	std::cin >> a[0][0];
 
 	if (a[0][0] = 'x' || 'X' && a[0][0] != 'o' || 'O')
@@ -56,4 +64,3 @@ int main()
 	play();
 	system("pause");
 }
-// this is 10% complete

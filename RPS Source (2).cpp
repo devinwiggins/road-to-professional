@@ -47,15 +47,11 @@ void instructions_G()
 void main()
 {
 	bool cont = true;
-	int answer;
-	do 
+	while (cont)
 	{
 		instructions_G();
 		play();
-		std::cout << "Would you like to continue? Y/N" << std::endl;
-		if (answer == 'n' || 'N')
-				break;
-	} while (answer != 'n');
+	}
 	
 	system("pause");
 }
