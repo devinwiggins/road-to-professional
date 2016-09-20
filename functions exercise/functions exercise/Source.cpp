@@ -143,7 +143,11 @@
 #include <iostream>
 int SumTo(int N)
 {
-	return 1 < N;
+	
+	int sum;
+	for (sum = 0; sum < N; sum++)
+		return sum;
+	
 }
 int main()
 {

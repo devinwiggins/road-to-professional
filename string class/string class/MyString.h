@@ -1,18 +1,27 @@
 #pragma once
+#include <iostream>
 class MyString
 {
 private:
-	char* word;
-	char* word2;
+	int x;
+	char m_arr2[255];
+	char m_arr[9];
+	char* m_word;
+	char* m_word2;
 public:
+	MyString() {};
+	MyString(char a[]);
+
 	//Todo
 	//Constructors
-
+	
 	int Size(); // queries the string's length returning an integer
-	int Index();
-	int Compare();
+	char Index();
+	char Compare();
 	char Append();
-	char Prepend();
-	//int
-	int LCDupe();
 };
+int main()
+{
+	MyString call = MyString ("hello");
+	std::cout << call.Index() << std::endl;
+}
