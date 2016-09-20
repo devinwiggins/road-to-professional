@@ -15,87 +15,59 @@ int MyString::Size()
 	}
 	return len;
 }
-char MyString::Index()
+char MyString::Index(int index)
 {
 	/*as function is called the input index being searched will loop through
 	the string and return the index */
 	//char i;
-	int x;
-	std::cin >> x; // user can input the character placement by 0 through < stringlength
-	int place = word[x];
-	std::cout << place << std::endl;
-	return place;
+	if (index >= 0 && index < Size()) // if index(the variable) is greater than or
+		// equal to 0 and less the the size the index will be returned
+		return word[index];
+	
+	return '?'; // if the input is invalid the functiopn returns '?'
+
+	// no less than 0 no greater than size
 };
 bool MyString::Compare(MyString w)
 {
 	int x = 0;
-	bool ruling = 0;
-	bool cont = true;
-	for (x = 0; x < 1; x++)
+	if (Size() != w.Size())
+		return false;
+	for (x = 0; x < Size(); x++)
 	{
 		if (word[x] != w.word[x])
 			return false;
-		else if (word[x] > w.word[x])
-			ruling = 1;
-		else if (word[x] < w.word[x])
-			ruling = -1;
-		else 
-		/*if (word[x] == 0 && w[x] == 0)
-		{
-			ruling = 0;
-			break;
-		}
-		else if (word[x] > w[x])
-		{
-			ruling = 1;
-			break;
-		}
-		else if (word[x] < w[x])
-		{
-			ruling = -1;
-			break;
-		}
-		else
-		{
-			++x;
-		}
-		*/
 	}
-
 	//Check if words are the same length.
 	//Loop through all characters of both words until a character is different at 
 	// that index.
-	//If know characters are different the words are the same.
+	//If no characters are different the words are the same.
 
-	return ruling;
+	return true;
+}char MyString::Append(MyString cat)
+{
+	char *arr = new char[cat.Size() + Size()]; //allocates dynamic memory of strings 
+	int it = 0;
+	for (int i = 0; i < Size(); i++)
+	{
+		arr[i] = word[i];
+	}                        // sets arr pointer to word
+	for (int i = Size(); i < cat.Size() + Size(); i++)
+	{
+		arr[i] = cat.word[it];
+		it++;
+	}
 }
-//char MyString::Append()
+
+char MyString::Prepend(MyString tac)
+{
+
+}
+//void MyString::ChangeLow()
 //{
-//	int attach = Size() + 1;
-//	int origin = 0;
-//	while (word2[origin] != 0)
+//	int x;
+//	while (word[x] <= 'A' &&  word[x] >= 'Z')
 //	{
-//		word[attach] = word2[origin];
-//		++attach;
-//		++origin;
+//
 //	}
-//	word[attach] = 0;
-//	return;
-//}
-//char MyString::Prepend()
-//{
-//	int attach = Size() + 1;
-//	int origin = 0;
-//	while (/*need some type of variable here*/[origin] != 0)
-//	{
-//		word[attach] = /* need some type of variable here*/[origin];
-//		attach++;
-//		origin++;
-//	}
-//	word[attach] = 0;
-//	return;
-//}
-//int MyString::LCDupe()
-//{
-//	int arr;
 //}

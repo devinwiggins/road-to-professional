@@ -10,10 +10,10 @@ public:
 	//Constructors
 
 	int Size(); // queries the string's length returning an integer
-	char Index(); // accesses a character at a certain index
+	char Index(int index); // accesses a character at a certain index
 	bool Compare(MyString w);
-//	char Append();
-//	char Prepend();
-//	//int
-//	int LCDupe();
+	char Append(MyString cat);
+	char Prepend(MyString tac);
+////int
+//	void ChangeLow();
 };

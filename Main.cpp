@@ -4,11 +4,11 @@ using namespace std;
 int main()
 {
 	MyString d = MyString("hello");
-	MyString s = MyString("hell");
+	MyString s = MyString(" world");
 	/*cout << d.Size() << endl;
 	cout << d.Index() << endl;*/
-	/*MyString s = MyString("hello");*/
-	cout << d.Compare(s);
+	//cout << d.Compare() << endl;
+	cout << d.Append("world") << endl;
 	system("pause");
 	return 0;
 }
