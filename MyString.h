@@ -11,7 +11,7 @@ public:
 
 	int Size(); // queries the string's length returning an integer
 	char Index(); // accesses a character at a certain index
-	int Compare(MyString w);
+	bool Compare(MyString w);
 //	char Append();
 //	char Prepend();
 //	//int

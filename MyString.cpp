@@ -23,40 +23,51 @@ char MyString::Index()
 	int x;
 	std::cin >> x; // user can input the character placement by 0 through < stringlength
 	int place = word[x];
-	/*for (i = word[0]; i <= place; i++)
-	{
-		if (i == place)
-		{*/
-			std::cout << place << std::endl;
-	//	}
-	//}
+	std::cout << place << std::endl;
 	return place;
 };
-int MyString::Compare(MyString w)
+bool MyString::Compare(MyString w)
 {
-	int cmp = 0;
-	int point = 0;
+	int x = 0;
+	bool ruling = 0;
 	bool cont = true;
-	while (cont)
+	for (x = 0; x < 1; x++)
 	{
-		if (word[cmp] == 0 && [cmp] == 0)
+		if (word[x] != w.word[x])
+			return false;
+		else if (word[x] > w.word[x])
+			ruling = 1;
+		else if (word[x] < w.word[x])
+			ruling = -1;
+		else 
+		/*if (word[x] == 0 && w[x] == 0)
 		{
-			point = 0;
+			ruling = 0;
+			break;
 		}
-		else if (word[cmp] > word2[cmp])
+		else if (word[x] > w[x])
 		{
-			point = 1;
+			ruling = 1;
+			break;
 		}
-		else if (word[cmp] < word2[cmp])
+		else if (word[x] < w[x])
 		{
-			point = -1;
+			ruling = -1;
+			break;
 		}
 		else
 		{
-			++cmp;
+			++x;
 		}
-		
+		*/
 	}
+
+	//Check if words are the same length.
+	//Loop through all characters of both words until a character is different at 
+	// that index.
+	//If know characters are different the words are the same.
+
+	return ruling;
 }
 //char MyString::Append()
 //{
