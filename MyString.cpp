@@ -71,3 +71,10 @@ char MyString::Prepend(MyString tac)
 //
 //	}
 //}
+
+//unable to find a solution to incompleted functions. i could understand how they work
+// i could not figure out how to optimize what ive learned to make those functions work
+// i have also come to the conclusion that alot of the functions required a higher level \
+// of knowledge to complete but because i spent so much time trying to figure it out 
+// on my own the time that i asked for help was too late. i try to 
+// do what i can without as much help in order to understand better.
