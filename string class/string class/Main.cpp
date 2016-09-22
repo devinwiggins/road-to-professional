@@ -3,13 +3,25 @@
 using namespace std;
 int main()
 {
-	MyString d = MyString("JAM");
+
+	int input;
+	MyString d = MyString("5gsjhvuj");
 	MyString s = MyString("programmin");
-	//cout << d.Size() << endl;
-	//cout << d.Index(2) << endl;
-	//cout << d.Compare(s) << endl;
-	//cout << d.Prepend(s) << endl;
-	d.ToLower();
+	printf("the size of the word 'JAM' is:\n");
+	cout << d.Size() << endl;
+	printf("type a number that is less the number the Size of the word anf that letter will print\n ");
+	cin >> input;
+	cout << "the Letter at that index is\n" << d.Index(input) << endl;
+	printf("the 2 words 'programmin' and 'JAM' will be compared. If they are the the same\nthe true integral value 1 will print. if they are different the false integral\nvalue 0 will print\n");
+	cout << d.Compare(s) << endl;
+	system("pause");
+	printf("the word programmin will be appended to JAM\n");
+	cout << d.Append(s) << endl;
+	system("pause");
+	printf("the word Programmin will be prepended to JAM\n");
+	cout << d.Prepend(s) << endl;
+	cout << d.ToLower() << endl;
+	cout << s.ToUpper() << endl;
 	system("pause");
 	return 0;
 }

@@ -15,9 +15,12 @@ public:
 	char* Append(MyString cat); //takes the object string attaches the parameter string
 	char* Prepend(MyString tac); //takes the parameter string in and attaches the object string
 	const char* ToConstant(); // returns the object as a constant character 
-	void ToLower(); //converts the object string to a lowercase version of itself
-	void ToUpper(); //converts the object string to a lowercase version of itself
-	char findSub();
+	char* ToLower(); //converts the object string to a lowercase version of itself
+	char* ToUpper(); //converts the object string to a lowercase version of itself
+	char findSub(); //finds the place of a sub string and returns it
+	char SubByIndex(); //
+	char SwapSub();
+	char To_cstr(); // returns input C-style string
 };
 
 

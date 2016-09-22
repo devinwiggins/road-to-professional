@@ -4,12 +4,12 @@
 
 MyString::MyString(char *a)
 {
-	word = a;
+	m_word = a;
 }
 int MyString::Size()
 {
 	int len = 0;
-	while (word[len] != '\0')
+	while (m_word[len] != '\0')
 	{
 		len++;
 	}
@@ -22,7 +22,7 @@ char MyString::Index(int index)
 	//char i;
 	if (index >= 0 && index < Size()) // if index(the variable) is greater than or
 		// equal to 0 and less the the size the index will be returned
-		return word[index];
+		return m_word[index];
 	
 	return '?'; // if the input is invalid the functiopn returns '?'
 
@@ -35,7 +35,7 @@ bool MyString::Compare(MyString w)
 		return false;
 	for (x = 0; x < Size(); x++)
 	{
-		if (word[x] != w.word[x])
+		if (m_word[x] != w.m_word[x])
 			return false;
 	}
 	//Check if words are the same length.
@@ -44,37 +44,61 @@ bool MyString::Compare(MyString w)
 	//If no characters are different the words are the same.
 
 	return true;
-}char MyString::Append(MyString cat)
+}
+char* MyString::Append(MyString cat)
 {
-	char *arr = new char[cat.Size() + Size()]; //allocates dynamic memory of strings 
+	char *arr = new char[cat.Size() + Size() - 4]; //allocates dynamic memory of strings 
 	int it = 0;
 	for (int i = 0; i < Size(); i++)
 	{
-		arr[i] = word[i];
+		arr[i] = m_word[i];
 	}                        // sets arr pointer to word
 	for (int i = Size(); i < cat.Size() + Size(); i++)
 	{
-		arr[i] = cat.word[it];
+		arr[i] = cat.m_word[it];
 		it++;
 	}
+	return arr;
 }
-
-char MyString::Prepend(MyString tac)
+char* MyString::Prepend(MyString tac)
 {
-
+	char *arr = new char[tac.Size() + Size() - 4];
+	int it = 0;
+	for (int i = 0; i < tac.Size(); i++)
+	{
+		arr[i] = tac.m_word[i];
+	}
+	for (int i = tac.Size(); i < Size() + tac.Size(); i++)
+	{
+		arr[i] = m_word[it];
+		it++;
+	}
+	return arr;
 }
-//void MyString::ChangeLow()
-//{
-//	int x;
-//	while (word[x] <= 'A' &&  word[x] >= 'Z')
-//	{
-//
-//	}
-//}
+const char * MyString::ToConstant()
+{
+	return m_word;
+}
+void MyString::ToLower()
+{
+	for (int i = 0; i < Size(); i++)
+		// i is supposed to go through the string checking each letter
+	{
+		if (m_word[i] >= 'A' && m_word[i] <= 'Z')
 
-//unable to find a solution to incompleted functions. i could understand how they work
-// i could not figure out how to optimize what ive learned to make those functions work
-// i have also come to the conclusion that alot of the functions required a higher level \
-// of knowledge to complete but because i spent so much time trying to figure it out 
-// on my own the time that i asked for help was too late. i try to 
-// do what i can without as much help in order to understand better.
+			m_word[i] += 32;
+
+			// this is supposed to return the value of 
+			// the letter that i's address is equal to, plus 32.
+			// the 32 takes the ascii character's place value on the ascii table
+			// and adds it by 32 in order to match its lowercase counterpart
+	}
+}
+void MyString::ToUpper()
+{
+	for (int i = 0; i < Size(); i++)
+	{
+		if (m_word[i] <= 'z' && m_word[i] >= 'z')
+			m_word[i] -= 32;
+	}
+}

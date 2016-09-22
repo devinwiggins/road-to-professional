@@ -14,6 +14,7 @@ int MyString::Size()
 		len++;
 	}
 	return len;
+	// returns the length of the word 
 }
 char MyString::Index(int index)
 {
@@ -31,7 +32,7 @@ char MyString::Index(int index)
 bool MyString::Compare(MyString w)
 {
 	int x = 0;
-	if (Size() != w.Size())
+	if (Size() != w.Size()) //checks the two strings to see if they are the same
 		return false;
 	for (x = 0; x < Size(); x++)
 	{
@@ -49,20 +50,21 @@ char* MyString::Append(MyString cat)
 {
 	char *arr = new char[cat.Size() + Size() - 4]; //allocates dynamic memory of strings 
 	int it = 0;
-	for (int i = 0; i < Size(); i++)
+	for (int i = 0; i < Size(); i++) //increments i until it reaches the numberless the sixe of the string
 	{
 		arr[i] = m_word[i];
 	}                        // sets arr pointer to word
 	for (int i = Size(); i < cat.Size() + Size(); i++)
 	{
-		arr[i] = cat.m_word[it];
+		arr[i] = cat.m_word[it]; //increments cat string into object string
 		it++;
+		
 	}
 	return arr;
 }
 char* MyString::Prepend(MyString tac)
 {
-	char *arr = new char[tac.Size() + Size() - 4];
+	char *arr = new char[tac.Size() + Size() - 4]; // same as Append function except it append the object to the parameters string
 	int it = 0;
 	for (int i = 0; i < tac.Size(); i++)
 	{
@@ -70,35 +72,68 @@ char* MyString::Prepend(MyString tac)
 	}
 	for (int i = tac.Size(); i < Size() + tac.Size(); i++)
 	{
-		arr[i] = m_word[it];
+		arr[i] = m_word[it]; //increments parameter string into empty spaces in arr
 		it++;
 	}
-	return arr;
+	return m_word;
 }
 const char * MyString::ToConstant()
 {
-	return m_word;
+	return m_word; //returns object string as a const char
 }
-void MyString::ToLower()
+char* MyString::ToLower()
 {
-	for (int i = 0; i < Size(); i++)
+	char* word;
+	memcpy(&m_word, &word, sizeof(m_word));
+	for (int i = 0; i < Size(); ++i)
 		// i is supposed to go through the string checking each letter
 	{
-		if (m_word[i] >= 'A' && m_word[i] <= 'Z')
-
-			m_word[i] += 32;
-
+		if (word[i] <= 'A' && word[i] >= 'Z')
+		{
+			word[i] += 32;
+		}
+		return word;
+	}
 			// this is supposed to return the value of 
 			// the letter that i's address is equal to, plus 32.
 			// the 32 takes the ascii character's place value on the ascii table
 			// and adds it by 32 in order to match its lowercase counterpart
+}
+char* MyString::ToUpper()
+{
+
+	for (int i = 0; i < Size(); ++i)
+	{
+	
+
+		if (m_word[i] > 'a' && m_word[i] < 'z')
+		{
+			m_word[i] -= 32;
+		}
+		return m_word;
+		// this is supposed to return the value of 
+		// the letter that i's address is equal to, minus 32.
+		// the 32 takes the ascii character's place value on the ascii table
+		// and substract it by 32 in order to match its lowercase counterpart
 	}
 }
-void MyString::ToUpper()
+
+char MyString::findSub()
 {
-	for (int i = 0; i < Size(); i++)
-	{
-		if (m_word[i] <= 'z' && m_word[i] >= 'z')
-			m_word[i] -= 32;
-	}
+	return 0;
+}
+
+char MyString::SubByIndex()
+{
+	return 0;
+}
+
+char MyString::SwapSub()
+{
+	return 0;
+}
+
+char MyString::To_cstr()
+{
+	return 0;
 }
