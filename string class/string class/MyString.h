@@ -2,7 +2,7 @@
 class MyString
 {
 private:
-	char* m_word;
+char* m_word;
 public:
 	//Todo
 	MyString() {};
@@ -17,8 +17,8 @@ public:
 	const char* ToConstant(); // returns the object as a constant character 
 	char* ToLower(); //converts the object string to a lowercase version of itself
 	char* ToUpper(); //converts the object string to a lowercase version of itself
-	char findSub(); //finds the place of a sub string and returns it
-	char SubByIndex(); //
+	bool getSub(MyString sub); //finds the place of a sub string and returns it
+	char SubByIndex(); //find the 
 	char SwapSub();
 	char To_cstr(); // returns input C-style string
 };

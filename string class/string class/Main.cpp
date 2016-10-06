@@ -4,10 +4,10 @@ using namespace std;
 int main()
 {
 
-	int input;
-	MyString d = MyString("5gsjhvuj");
+	//char input;
+	MyString d = MyString("JAM with friends");
 	MyString s = MyString("programmin");
-	printf("the size of the word 'JAM' is:\n");
+	/*printf("the size of the word 'JAM' is:\n");
 	cout << d.Size() << endl;
 	printf("type a number that is less the number the Size of the word anf that letter will print\n ");
 	cin >> input;
@@ -19,9 +19,10 @@ int main()
 	cout << d.Append(s) << endl;
 	system("pause");
 	printf("the word Programmin will be prepended to JAM\n");
-	cout << d.Prepend(s) << endl;
-	cout << d.ToLower() << endl;
-	cout << s.ToUpper() << endl;
+	cout << d.Prepend(s) << endl;*/
+	//cout << d.ToLower() << endl;
+	//cout << s.ToUpper() << endl;
+	cout << d.getSub("with");
 	system("pause");
 	return 0;
 }

@@ -6,16 +6,7 @@ MyString::MyString(char *a)
 {
 	m_word = a;
 }
-int MyString::Size()
-{
-	int len = 0;
-	while (m_word[len] != '\0')
-	{
-		len++;
-	}
-	return len;
-	// returns the length of the word 
-}
+
 char MyString::Index(int index)
 {
 	/*as function is called the input index being searched will loop through
@@ -60,7 +51,7 @@ char* MyString::Append(MyString cat)
 		it++;
 		
 	}
-	return arr;
+	return m_word;
 }
 char* MyString::Prepend(MyString tac)
 {
@@ -75,7 +66,8 @@ char* MyString::Prepend(MyString tac)
 		arr[i] = m_word[it]; //increments parameter string into empty spaces in arr
 		it++;
 	}
-	return m_word;
+	arr = m_word;
+	return tac.m_word;
 }
 const char * MyString::ToConstant()
 {
@@ -83,49 +75,64 @@ const char * MyString::ToConstant()
 }
 char* MyString::ToLower()
 {
-	char* word;
-	memcpy(&m_word, &word, sizeof(m_word));
+
 	for (int i = 0; i < Size(); ++i)
 		// i is supposed to go through the string checking each letter
 	{
-		if (word[i] <= 'A' && word[i] >= 'Z')
+		if (m_word[i] <= 'A' && m_word[i] >= 'Z')
 		{
-			word[i] += 32;
+			m_word[i] = m_word[i] + 32;
 		}
-		return word;
+		
 	}
 			// this is supposed to return the value of 
 			// the letter that i's address is equal to, plus 32.
 			// the 32 takes the ascii character's place value on the ascii table
 			// and adds it by 32 in order to match its lowercase counterpart
+	return m_word;
 }
 char* MyString::ToUpper()
 {
 
 	for (int i = 0; i < Size(); ++i)
 	{
-	
-
 		if (m_word[i] > 'a' && m_word[i] < 'z')
 		{
-			m_word[i] -= 32;
+			m_word[i] = m_word[i] - 32;
 		}
-		return m_word;
+		
 		// this is supposed to return the value of 
 		// the letter that i's address is equal to, minus 32.
 		// the 32 takes the ascii character's place value on the ascii table
 		// and substract it by 32 in order to match its lowercase counterpart
 	}
+	return m_word;
 }
 
-char MyString::findSub()
+bool MyString::getSub(MyString sub)
 {
-	return 0;
-}
+	int it = 0;
+	for (int i = 0; i < Size() + sub.Size(); i++)
+	{
+		if (m_word[i] == sub.m_word[it])
+		{
+			it++;
+		}
+		else if (m_word[i] != sub.m_word[it])
+		{
+			
+		}
+		else
+			return 0;
+	}
+	if (sub.m_word == m_word)
+	return 1;
+};
 
 char MyString::SubByIndex()
 {
 	return 0;
+	
 }
 
 char MyString::SwapSub()
