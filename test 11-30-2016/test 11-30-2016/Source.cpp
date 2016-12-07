@@ -19,12 +19,11 @@ void strrev(char arr[],int size)
 	
 	for (int i = 0; i < size/2; i++)
 	{
-		
+
 		char t = arr[i];
 		arr[i] = arr[size - 2];
 		arr[size - 2] = t;
 		size--;
-		
 	}
 }
 
@@ -61,9 +60,35 @@ public:
 //	
 //}
 
-//void strSort()
+//void strSort(std::string n)
 //{
-//
+//bool MyString::findIndexSub(int Index, MyString sub)
+{
+	int it = 0;
+	{
+		for (int i = Index; i < Size() && i != ' '; i++)// increments i to check continuous character spaces unless it 
+														//hits a space character
+		{
+			if (m_word[i] == sub.m_word[it])
+			{
+				it++;
+				continue;
+			}
+
+			if (m_word[i] != sub.m_word[it] && sub.m_word[it] != '\0') // if the letter do not match at any point it returns false
+																	   // null character check statement cannot be executed if it is false
+			{
+				return false;
+			}
+			if (sub.m_word[it] == '\0')// after full check if the words are equal the loop breaks and returns true
+			{
+				break;
+			}
+		}
+	}
+	return true;
+	// this function will return true or false whether the argument string is the sub string specified by Index
+}
 //}
 
 int main()
@@ -99,7 +124,8 @@ int main()
 	//int b = 7;
 	//IntSwap(a, b);
 // 7)
-	//strSort();
+	std::string n;
+	strSort(n);
 	system("pause");
 	return 0;
 }
