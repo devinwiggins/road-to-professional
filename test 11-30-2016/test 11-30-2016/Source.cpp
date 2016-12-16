@@ -16,14 +16,16 @@ void popArr(int arr[], int size)
 
 void strrev(char arr[],int size)
 {
-	
-	for (int i = 0; i < size/2; i++)
+	if (size == strlen(arr) + 1)
 	{
+		for (int i = 0; i < size / 2 && arr[size - 2] == '\0'; i++)
+		{
 
-		char t = arr[i];
-		arr[i] = arr[size - 2];
-		arr[size - 2] = t;
-		size--;
+			char t = arr[i];
+			arr[i] = arr[size - 2];
+			arr[size - 2] = t;
+			size--;
+		}
 	}
 }
 
@@ -99,8 +101,8 @@ int main()
 	int arr[6];
 	popArr(arr, 6); //complete
 // 3)
-	char name[6] = "Devin";
-	strrev(name, 6); //complete
+	char name[5] = "regi";
+	strrev(name, 5); //complete
 // 4)
 	Cat catBox[26]; //completed
 	int i = 0;
