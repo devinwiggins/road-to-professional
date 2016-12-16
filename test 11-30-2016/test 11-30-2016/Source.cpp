@@ -136,6 +136,7 @@ int main()
 // 7)
 	std::string n = "Cash Bush Dandy Eat";
 	strSort(n); //incomplete
+	int f[] = { 1, 3, 5, 3, 5, 6, 3 };
 	system("pause");
 	return 0;
 } 
