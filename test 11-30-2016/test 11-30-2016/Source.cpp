@@ -7,10 +7,10 @@ float doStuff(float A, float B, float C)
 
 void popArr(int arr[], int size)
 {
-	
-	for (int i = 0; i <= size; i++)
+	int j = 0;
+	for (int i = 0; i < size; i++)
 	{
-		
+		arr[i] = j += 2;
 	}
 }
 
@@ -35,97 +35,109 @@ public:
 	void NameMe(char a) { m_name = a; };
 };
 
-//int mostNum(int arr[],int size)
-//{
-//	int z = 0;
-//	for (int i = 0; i <= size; i++)
-//	{
-//		//arr[i] = arr[i];
-//		for (int j = 0; j <= size; j++)
-//		{
-//			int x[10];
-//			if (i == j)
-//			{
-//				x[z] = arr[j];
-//				z++;
-//			}
-//		}
-//
-//	}
-//	return 0;
-//}
-
-//void IntSwap(int A, int B)
-//{
-//	
-//}
-
-//void strSort(std::string n)
-//{
-//bool MyString::findIndexSub(int Index, MyString sub)
+int mostNum(int arr[],int size)
 {
-	int it = 0;
+	int z = 0;
+	for (int i = 0; i <= size; i++)
 	{
-		for (int i = Index; i < Size() && i != ' '; i++)// increments i to check continuous character spaces unless it 
-														//hits a space character
+		//arr[i] = arr[i];
+		for (int j = 0; j <= size; j++)
 		{
-			if (m_word[i] == sub.m_word[it])
+			int x[10];
+			if (i == j)
 			{
-				it++;
-				continue;
+				x[z] = arr[j];
+				z++;
 			}
+		}
 
-			if (m_word[i] != sub.m_word[it] && sub.m_word[it] != '\0') // if the letter do not match at any point it returns false
-																	   // null character check statement cannot be executed if it is false
+	}
+	return 0;
+}
+
+void IntSwap(int &A, int &B)
+{
+	A = A + B;
+	B = (B - B * 2) + A;
+	A = A - B;
+}
+
+void strSort(std::string n)
+{
+	int i = 0;
+	std::string *tmp = new std::string;
+	tmp = &n;
+	std::string firstletter;
+	for (i; i != '\0'; i++)// iterates through the string and finds the first letter
+	{
+		if (i == 0)
+		{
+			firstletter = n[i];
+		}
+		else if (n[i] == ' ')
+		{
+			i++; // moves to the next letter which will be presumed as the first letter of the string
+			firstletter = n[i]; //holds the first letter of the sub string 
+
+		}
+		for (int j = 0; j != '\0'; j++) // 
+		{
+			if (tmp[j] == firstletter)
 			{
-				return false;
-			}
-			if (sub.m_word[it] == '\0')// after full check if the words are equal the loop breaks and returns true
-			{
-				break;
+				
 			}
 		}
 	}
-	return true;
-	// this function will return true or false whether the argument string is the sub string specified by Index
 }
-//}
+
 
 int main()
 {
 // 1)
-	doStuff(2, 3, 4);
+	doStuff(2, 3, 4); //completed
 // 2)
 	int arr[6];
-	popArr(arr, 6);
+	popArr(arr, 6); //complete
 // 3)
 	char name[6] = "Devin";
-	strrev(name, 6);
+	strrev(name, 6); //complete
 // 4)
-	Cat a[26];
+	Cat catBox[26]; //completed
 	int i = 0;
-
+	char x;
 	while (i < 26)
 	{
-	char x = 65;
+		if (i == 0)
+		{
+			x = 65;
+		}
 		while( x < 91)
 		{
-			a[i].NameMe(x);
+			catBox[i].NameMe(x);
+			
+
+			if (i % 2 == 1)
+			{
+				catBox[i].NameMe(x += 32);
+				x -= 32;
+			}
+			
 			x++;
 			break;
 		}
+		
 		i++;
 	}
 // 5)
-	/*int nums[] = { 1, 1, 2, 3, 4, 5 , 1 , 6 , 6, 1 };
-	mostNum(nums, 10);*/
+	int nums[] = { 1, 1, 2, 3, 4, 5 , 1 , 6 , 6, 1 };
+	mostNum(nums, 10); //incomplete
 // 6)
-	//int a = 5;
-	//int b = 7;
-	//IntSwap(a, b);
+	int num1 = 200;
+	int num2 = 7;
+	IntSwap(num1, num2); //complete
 // 7)
-	std::string n;
-	strSort(n);
+	std::string n = "Cash Bush Dandy Eat";
+	strSort(n); //incomplete
 	system("pause");
 	return 0;
-}
+} 
